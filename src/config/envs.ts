@@ -6,7 +6,7 @@ interface EnvVars {
   NATS_SERVERS: string[];
   STRIP_SECRET: string;
   STRIPE_SUSSES_URL: string;
-  STRIPE_CANCELED_URL: string;
+  STRIPE_CANCELED_UR: string;
   STRIP_ENDPOINT_SECRET: string;
 }
 
@@ -16,7 +16,7 @@ const envsShema = joi
     NATS_SERVERS: joi.array().items(joi.string()).required(),
     STRIP_SECRET: joi.string().required(),
     STRIPE_SUSSES_URL: joi.string().required(),
-    STRIPE_CANCELED_URL: joi.string().required(),
+    STRIPE_CANCELED_UR: joi.string().required(),
     STRIP_ENDPOINT_SECRET: joi.string().required(),
   })
   .unknown(true);
@@ -37,6 +37,6 @@ export const envs = {
   natsServers: envVars.NATS_SERVERS,
   stripeSecret: envVars.STRIP_SECRET,
   stripeSussesUrl: envVars.STRIPE_SUSSES_URL,
-  stripeCancelUrl: envVars.STRIPE_CANCELED_URL,
+  stripeCancelUrl: envVars.STRIPE_CANCELED_UR,
   stripeEndpointSecret: envVars.STRIP_ENDPOINT_SECRET,
 };
